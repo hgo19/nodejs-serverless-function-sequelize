@@ -7,7 +7,7 @@ const config: Options = {
   database: process.env.POSTGRES_DATABASE,
   host: process.env.POSTGRES_HOST || 'localhost',
   port: Number(process.env.DB_PORT) || 5432,
-  dialect: 'mysql',
+  dialect: 'postgres',
   dialectOptions: {
     timezone: 'Z',
   },
