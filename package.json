@@ -4,6 +4,7 @@
   "private": true,
   "devDependencies": {
     "@types/node": "^17.0.42",
+    "@types/pg": "^8.11.2",
     "@vercel/node": "^2.9.6",
     "sequelize-cli": "^6.6.2",
     "sequelize-typescript": "^2.1.6",
@@ -13,5 +14,8 @@
     "dotenv": "^16.4.5",
     "pg": "^8.11.3",
     "sequelize": "^6.37.1"
+  },
+  "scripts": {
+    "build": ""
   }
 }
