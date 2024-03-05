@@ -16,6 +16,7 @@
     "sequelize": "^6.37.1"
   },
   "scripts": {
-    "build": "npx tsc && npx sequelize init && npx sequelize db:migrate"
+    "build": "npx tsc",
+    "db:migrate": "npx sequelize db:migrate"
   }
 }
