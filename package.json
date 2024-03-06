@@ -17,6 +17,6 @@
   },
   "scripts": {
     "build": "npx tsc && npx sequelize db:migrate",
-    "db:migrate": "npx sequelize db:migrate"
+    "db:migrate": "npx sequelize-cli db:migrate"
   }
 }
