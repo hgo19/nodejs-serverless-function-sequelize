@@ -6,10 +6,6 @@ class Produto extends Model {
   public nome!: string;
   public qtd!: number;
   public preco!: number;
-
-  // Timestamps
-  public readonly createdAt!: Date;
-  public readonly updatedAt!: Date;
 }
 
 Produto.init(
@@ -35,6 +31,7 @@ Produto.init(
   {
     sequelize,
     tableName: 'produtos',
+    timestamps: false
   }
 );
 
