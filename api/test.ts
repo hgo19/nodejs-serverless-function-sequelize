@@ -1,17 +1,15 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node'
-import { sequelize } from '../database/sequelize';
-import User from '../database/models/User';
+
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  sequelize.connectionManager.initPools();
+  const token = req.headers.Authorization;
 
-  try {
-    const userInDb = await User.create({
-      username: 'Vinijr',
-      email: 'vinijr@email.com'
-    })
-    return res.status(201).json(userInDb)
-  } finally {
-    await sequelize.connectionManager.close();
+  if (!token) {
+    return res.status(401).json({ message: 'Unauthorized' });
   }
+}
+
+
+export function GET(req: VercelRequest) {
+  return new Response(`Hello from ${process.env.VERCEL_REGION}`);
 }
