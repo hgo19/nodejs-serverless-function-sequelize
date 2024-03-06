@@ -4,9 +4,8 @@ import type { VercelRequest, VercelResponse } from '@vercel/node'
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   const token = req.headers.Authorization;
   console.log(req.headers)
-  if (!token) {
-    return res.status(401).json({ message: 'Unauthorized' });
-  }
+
+  return res.status(401).json({ message: 'Unauthorized', token });
 }
 
 
