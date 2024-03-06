@@ -5,7 +5,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const token = req.headers.Authorization;
   console.log(req.headers)
 
-  return res.status(401).json({ message: 'Unauthorized', headers: req.headers });
+  return res.status(401).json({ message: 'Unauthorized', headers: req.headers, req: req });
 }
 
 
