@@ -1,7 +1,7 @@
 import { Sequelize } from "sequelize";
 import * as pg from 'pg'
 
-export const sequelize = new Sequelize(process.env.POSTGRES_URL ?? '', {
+export const sequelize = new Sequelize(process.env.POSTGRES_URL_NON_POOLING ?? '', {
   dialect: 'postgres',
   protocol: 'postgres',
   dialectModule: pg,
