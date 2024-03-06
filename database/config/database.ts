@@ -1,16 +1,20 @@
 import 'dotenv/config';
 import { Options } from 'sequelize';
+import * as pg from 'pg'
 
 const config: Options = {
-  username: process.env.POSTGRES_USER || 'root',
-  password: process.env.POSTGRES_PASSWORD || '123456',
+  username: process.env.POSTGRES_USER,
+  host: process.env.POSTGRES_HOST,
+  password: process.env.POSTGRES_PASSWORD,
   database: process.env.POSTGRES_DATABASE,
-  host: process.env.POSTGRES_HOST || 'localhost',
-  port: Number(process.env.DB_PORT) || 5432,
   dialect: 'postgres',
+  protocol: 'postgres',
+  dialectModule: pg,
   dialectOptions: {
-    timezone: 'Z',
-  },
+    ssl: {
+      require: true
+    }
+  }
 }
 
 module.exports = config;
